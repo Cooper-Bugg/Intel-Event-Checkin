@@ -1,1 +1,1 @@
-# Intel-Event-Checkin
+# Intel Event Checkin

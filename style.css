@@ -77,8 +77,8 @@ body {
 
 /* Main container */
 .container {
-  max-width: 700px;
-  width: 90%;
+  max-width: 1200px;
+  width: 98%;
   margin: 0 auto 20px;
   padding: 26px;
   background: white;
@@ -89,7 +89,7 @@ body {
 
 /* Check-in form */
 .check-in {
-  width: 100%;
+  max-width: 700px;
   margin: 0 auto;
   padding: 30px;
   background-color: #f8fafc;
@@ -303,6 +303,9 @@ select {
   margin-top: 30px;
   padding-top: 30px;
   border-top: 2px solid #f1f5f9;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .team-stats h3 {
@@ -311,35 +314,45 @@ select {
   margin-bottom: 20px;
 }
 
+/* Teams grid */
 .teams-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+  grid-template-columns: repeat(3, minmax(320px, 1fr));
+  gap: 32px;
+  margin-top: 24px;
+}
+
+.team-section {
+  display: flex;
+  flex-direction: column;
 }
 
 .team-card {
-  padding: 15px;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 4px solid transparent;
+  margin-bottom: 15px;
 }
 
-/* Team card colors */
-.team-card.water {
-  background-color: #e8f7fc;
-}
-.team-card.zero {
-  background-color: #ecfdf3;
-}
-.team-card.power {
-  background-color: #fff7ed;
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
-.team-name {
-  font-size: 15px;
-  font-weight: 500;
-  color: #475569;
+.team-section.water .team-card {
+  border-top-color: #0ea5e9;
+}
+
+.team-section.zero .team-card {
+  border-top-color: #10b981;
+}
+
+.team-section.power .team-card {
+  border-top-color: #f59e0b;
 }
 
 /* Mobile responsive */
@@ -375,4 +388,167 @@ select {
   .teams-grid {
     grid-template-columns: 1fr;
   }
+
+  .team-section {
+    margin-bottom: 30px;
+  }
+}
+
+/* Celebration Message */
+.celebration-message {
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  border: 2px solid #f59e0b;
+  border-radius: 15px;
+  padding: 30px;
+  margin: 30px 0;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
+  animation: celebrationPulse 2s ease-in-out infinite;
+}
+
+.celebration-content i {
+  font-size: 48px;
+  color: #d97706;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.celebration-content h2 {
+  color: #92400e;
+  margin: 15px 0;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.celebration-content p {
+  color: #a16207;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+@keyframes celebrationPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+/* Attendee List */
+.attendee-section {
+  margin-top: 40px;
+}
+
+.attendee-section h3 {
+  color: #1e293b;
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.attendee-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.attendee-item {
+  background: white;
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #e2e8f0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.attendee-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.attendee-item.water {
+  border-left-color: #0ea5e9;
+  background: linear-gradient(135deg, #ffffff, #f0f9ff);
+}
+
+.attendee-item.zero {
+  border-left-color: #10b981;
+  background: linear-gradient(135deg, #ffffff, #f0fdf4);
+}
+
+.attendee-item.power {
+  border-left-color: #f59e0b;
+  background: linear-gradient(135deg, #ffffff, #fffbeb);
+}
+
+.attendee-name {
+  font-weight: 600;
+  font-size: 16px;
+  color: #1e293b;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.attendee-team {
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.no-attendees {
+  text-align: center;
+  color: #64748b;
+  font-style: italic;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  grid-column: 1 / -1;
+}
+
+/* Team Attendee Lists */
+.team-attendees {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.team-attendee-item {
+  background: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  font-weight: 500;
+  color: #374151;
+  border-left: 3px solid #e5e7eb;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.team-attendee-item:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.team-section.water .team-attendee-item {
+  border-left-color: #0ea5e9;
+  background: linear-gradient(135deg, #ffffff, #f0f9ff);
+}
+
+.team-section.zero .team-attendee-item {
+  border-left-color: #10b981;
+  background: linear-gradient(135deg, #ffffff, #f0fdf4);
+}
+
+.team-section.power .team-attendee-item {
+  border-left-color: #f59e0b;
+  background: linear-gradient(135deg, #ffffff, #fffbeb);
+}
+
+.no-team-attendees {
+  text-align: center;
+  color: #9ca3af;
+  font-style: italic;
+  padding: 20px;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 2px dashed #e5e7eb;
+  font-size: 14px;
 }

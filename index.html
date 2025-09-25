@@ -63,21 +63,45 @@
         </div>
       </form>
 
-      <!-- Team stats -->
+      <!-- Celebration message -->
+      <div id="celebrationMessage" class="celebration-message" style="display: none;">
+        <div class="celebration-content">
+          <i class="fas fa-trophy"></i>
+          <h2>🎉 Congratulations!</h2>
+          <p id="celebrationText">We've reached our attendance goal!</p>
+        </div>
+      </div>
+
+      <!-- Team stats with attendee lists -->
       <div class="team-stats">
         <h3>Team Attendance</h3>
         <div class="teams-grid">
-          <div class="team-card water">
-            <span class="team-name">🌊 Team Water Wise</span>
-            <span class="team-count" id="waterCount">0</span>
+          <div class="team-section water">
+            <div class="team-card">
+              <span class="team-name">🌊 Team Water Wise</span>
+              <span class="team-count" id="waterCount">0</span>
+            </div>
+            <div class="team-attendees" id="waterAttendees">
+              <p class="no-team-attendees">No members yet</p>
+            </div>
           </div>
-          <div class="team-card zero">
-            <span class="team-name">🌿 Team Net Zero</span>
-            <span class="team-count" id="zeroCount">0</span>
+          <div class="team-section zero">
+            <div class="team-card">
+              <span class="team-name">🌿 Team Net Zero</span>
+              <span class="team-count" id="zeroCount">0</span>
+            </div>
+            <div class="team-attendees" id="zeroAttendees">
+              <p class="no-team-attendees">No members yet</p>
+            </div>
           </div>
-          <div class="team-card power">
-            <span class="team-name">⚡ Team Renewables</span>
-            <span class="team-count" id="powerCount">0</span>
+          <div class="team-section power">
+            <div class="team-card">
+              <span class="team-name">⚡ Team Renewables</span>
+              <span class="team-count" id="powerCount">0</span>
+            </div>
+            <div class="team-attendees" id="powerAttendees">
+              <p class="no-team-attendees">No members yet</p>
+            </div>
           </div>
         </div>
       </div>
@@ -92,6 +116,6 @@
       >
     </footer>
 
-    <script src="script.js"></script>
+    <script src="scripts.js"></script>
   </body>
 </html>
