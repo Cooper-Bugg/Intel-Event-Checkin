@@ -1,6 +1,7 @@
 # Intel Sustainability Summit Check-In
+Live demo: https://cooper-bugg.github.io/Intel-Event-Checkin/
 
-This project is a simple web-based check-in system for the Intel Sustainability Summit. It allows event attendees to check in, select their team, and see live updates of attendance and team progress.
+This project is a simple web-based check-in system for the Intel Sustainability Summit. It allows event attendees to check in, select their team and see live updates of attendance and team progress.
 
 ## Features
 - Attendees enter their name and select a team to check in.
